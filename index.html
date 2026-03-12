@@ -3,170 +3,1059 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uday Prasad Swarna | Portfolio</title>
+  <title>Uday Prasad Swarna | QA Engineer | SDET | SQL Professional</title>
+  <meta name="description" content="Portfolio of Uday Prasad Swarna - QA Engineer, SDET, and SQL Professional specializing in automation testing, database validation, and CI/CD." />
   <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: rgba(255, 255, 255, 0.75);
+      --surface-solid: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: rgba(148, 163, 184, 0.25);
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
+      --primary: #2563eb;
+      --primary-soft: rgba(37, 99, 235, 0.10);
+      --accent: #0f172a;
+      --success: #16a34a;
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --nav-width: 280px;
+      --max-width: 1180px;
+    }
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.10), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
 
-    header {
-      padding: 60px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    header p {
-      font-size: 1.1rem;
-      color: #cbd5e1;
+    .page {
+      display: grid;
+      grid-template-columns: var(--nav-width) 1fr;
+      min-height: 100vh;
     }
 
-    nav {
-      background: #111827;
-      padding: 15px;
-      text-align: center;
+    .sidebar {
       position: sticky;
       top: 0;
+      height: 100vh;
+      padding: 28px 22px;
+      border-right: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
     }
 
-    nav a {
-      color: #e2e8f0;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+    .brand-card,
+    .menu-card,
+    .connect-card {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
     }
 
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 60px 20px;
+    .brand-card {
+      padding: 24px;
     }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #38bdf8;
+    .brand-card h1 {
+      font-size: 1.4rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .brand-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--primary);
+      background: var(--primary-soft);
+      padding: 9px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .menu-card {
+      padding: 18px;
+    }
+
+    .menu-card nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .menu-card a {
+      padding: 12px 14px;
+      border-radius: 14px;
+      color: var(--muted);
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .menu-card a:hover,
+    .menu-card a:focus {
+      background: rgba(15, 23, 42, 0.05);
+      color: var(--accent);
+    }
+
+    .connect-card {
+      padding: 20px;
+    }
+
+    .connect-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      color: var(--accent);
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-weight: 800;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .socials a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.13);
+    }
+
+    .content {
+      padding: 28px;
+    }
+
+    .inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
     }
 
     .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 20px;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
     }
 
-    .project {
-      margin-bottom: 20px;
+    .hero {
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-copy h2 {
+      font-size: clamp(2.3rem, 5vw, 4.3rem);
+      line-height: 1.05;
+      color: var(--accent);
+      margin-bottom: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-copy h2 span {
+      color: var(--primary);
+    }
+
+    .hero-copy p {
+      font-size: 1.04rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 24px;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.05);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 18px;
-      background: #38bdf8;
-      color: #0f172a;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 16px;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #0ea5e9);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.26);
+    }
+
+    .btn-secondary {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      color: var(--accent);
+    }
+
+    .hero-panel {
+      background: linear-gradient(180deg, #ffffff, #eff6ff);
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      border-radius: 28px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .hero-panel::before,
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(12px);
+      z-index: 0;
+    }
+
+    .hero-panel::before {
+      width: 180px;
+      height: 180px;
+      background: rgba(37, 99, 235, 0.14);
+      top: -50px;
+      right: -40px;
+    }
+
+    .hero-panel::after {
+      width: 140px;
+      height: 140px;
+      background: rgba(14, 165, 233, 0.12);
+      bottom: -30px;
+      left: -20px;
+    }
+
+    .profile-badge,
+    .stats-grid,
+    .floating-note {
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-badge {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 22px;
+      padding: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 18px 35px rgba(37, 99, 235, 0.08);
+    }
+
+    .profile-badge .small {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .profile-badge h3 {
+      font-size: 1.45rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .profile-badge p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.75);
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .stat-box span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .floating-note {
+      justify-self: end;
+      background: rgba(15, 23, 42, 0.95);
+      color: #fff;
+      padding: 14px 16px;
+      border-radius: 18px;
+      width: min(250px, 100%);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.22);
+    }
+
+    .floating-note strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .floating-note span {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.88rem;
+    }
+
+    .section {
+      padding: 34px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.65rem, 3vw, 2.4rem);
+      color: var(--accent);
+      line-height: 1.1;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .feature-card,
+    .project-card,
+    .timeline-card,
+    .skill-card,
+    .contact-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 24px;
+      padding: 24px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .feature-card:hover,
+    .project-card:hover,
+    .timeline-card:hover,
+    .skill-card:hover,
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.10);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.14), rgba(14, 165, 233, 0.18));
+      color: var(--primary);
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3,
+    .project-card h3,
+    .timeline-card h3,
+    .skill-card h3,
+    .contact-card h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+    }
+
+    .feature-card p,
+    .project-card p,
+    .timeline-card p,
+    .skill-card p,
+    .contact-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-card {
+      display: grid;
+      gap: 14px;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .project-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .stack span {
+      background: rgba(15, 23, 42, 0.05);
+      color: var(--accent);
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .timeline-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timeline-meta {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.10);
+      color: var(--success);
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .timeline-card ul {
+      margin-top: 14px;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .timeline-card li + li {
+      margin-top: 8px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skill-card ul {
+      margin-top: 12px;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .skill-card li + li {
+      margin-top: 8px;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-card strong {
+      color: var(--accent);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .contact-item {
+      display: grid;
+      gap: 4px;
+      padding: 14px 16px;
+      background: rgba(15, 23, 42, 0.04);
+      border-radius: 18px;
+    }
+
+    .contact-item span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .contact-item a,
+    .contact-item strong {
+      color: var(--accent);
+      font-weight: 700;
+      word-break: break-word;
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
-      background: #111827;
-      color: #94a3b8;
+      color: var(--muted);
+      padding: 6px 0 30px;
+      font-size: 0.95rem;
+    }
+
+    .mobile-topbar {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.86);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 18px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .mobile-topbar strong {
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .mobile-links {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+
+    .mobile-links a {
+      white-space: nowrap;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.05);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1180px) {
+      .features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero,
+      .split,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .mobile-topbar {
+        display: flex;
+      }
+
+      .content {
+        padding: 18px;
+      }
+
+      .hero,
+      .section {
+        padding: 24px;
+      }
+
+      .projects-grid,
+      .timeline-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-copy h2 {
+        font-size: 2.2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .hero-highlights,
+      .socials {
+        gap: 10px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Uday Prasad Swarna</h1>
-    <p>QA Engineer | SDET | SQL Database Professional</p>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I am a QA Engineer and SQL professional with experience in test automation,
-        database validation, query optimization, CI/CD pipelines, and production support.
-        I enjoy building reliable systems and improving software quality through automation
-        and strong data validation practices.
-      </p>
+  <div class="mobile-topbar">
+    <strong>Uday Prasad Swarna</strong>
+    <div class="mobile-links">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
     </div>
-  </section>
+  </div>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-      <p><strong>Testing:</strong> Selenium, Playwright, Cypress, API Testing, Postman, Rest Assured</p>
-      <p><strong>Database:</strong> SQL Server, T-SQL, Stored Procedures, Query Optimization, Indexing</p>
-      <p><strong>Tools:</strong> Jenkins, Git, Docker, Linux, Splunk, Jira</p>
-      <p><strong>Languages:</strong> Java, SQL, JavaScript</p>
-    </div>
-  </section>
+  <div class="page">
+    <aside class="sidebar">
+      <div>
+        <div class="brand-card">
+          <div class="tag">Available for QA / SDET roles</div>
+          <h1>Uday Prasad Swarna</h1>
+          <p>QA Engineer, SDET, and SQL professional focused on reliable automation, strong data validation, and scalable software quality practices.</p>
+        </div>
 
-  <section id="projects">
-    <h2>Projects</h2>
+        <div class="menu-card" style="margin-top: 18px;">
+          <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#projects">Projects</a>
+            <a href="#resume">Resume</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </div>
 
-    <div class="card project">
-      <h3>UI Test Automation Framework</h3>
-      <p>
-        Built an automation framework using Selenium / Playwright for web application testing,
-        including reusable components, reporting, and regression coverage.
-      </p>
-    </div>
+      <div class="connect-card">
+        <h3>Connect</h3>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/uday-prasad-swarna-4736881b9" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+          <a href="mailto:udayprasadswarna21@gmail.com" aria-label="Email">@</a>
+          <a href="#" aria-label="GitHub">GH</a>
+          <a href="tel:+18608178602" aria-label="Phone">☎</a>
+        </div>
+      </div>
+    </aside>
 
-    <div class="card project">
-      <h3>SQL Performance Optimization</h3>
-      <p>
-        Improved SQL query performance using execution plan analysis, indexing strategies,
-        and stored procedure tuning.
-      </p>
-    </div>
+    <main class="content">
+      <div class="inner">
+        <section class="card hero" id="home">
+          <div class="hero-copy">
+            <div class="tag">Hello, I am Uday</div>
+            <h2>I build <span>quality-first</span> systems through automation, SQL validation, and reliable testing.</h2>
+            <p>
+              I bring experience across QA engineering, database validation, SQL performance work, CI/CD support, and production troubleshooting. My focus is building scalable test processes, improving software reliability, and delivering confidence in every release.
+            </p>
+            <div class="hero-highlights">
+              <span class="pill">Selenium</span>
+              <span class="pill">Playwright</span>
+              <span class="pill">Cypress</span>
+              <span class="pill">SQL Server</span>
+              <span class="pill">API Testing</span>
+              <span class="pill">Jenkins</span>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">View Projects</a>
+              <a class="btn btn-secondary" href="#contact">Contact Me</a>
+            </div>
+          </div>
 
-    <div class="card project">
-      <h3>API Testing Suite</h3>
-      <p>
-        Designed API test scenarios for validating request/response behavior, error handling,
-        and data integrity across services.
-      </p>
-    </div>
-  </section>
+          <div class="hero-panel">
+            <div class="profile-badge">
+              <div class="small">Core Profile</div>
+              <h3>QA Engineer | SDET | SQL Professional</h3>
+              <p>Focused on automation frameworks, SQL query analysis, database validation, CI/CD workflows, and strong quality engineering practices.</p>
+            </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: udayprasadswarna21@gmail.com</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/uday-prasad-swarna-4736881b9" target="_blank" style="color:#38bdf8;">View Profile</a></p>
-      <p>GitHub: <a href="#" target="_blank" style="color:#38bdf8;">Add your GitHub link here</a></p>
-    </div>
-  </section>
+            <div class="stats-grid">
+              <div class="stat-box">
+                <strong>6+</strong>
+                <span>Years across QA, systems, and database support</span>
+              </div>
+              <div class="stat-box">
+                <strong>3</strong>
+                <span>Strong focus areas: UI, API, and SQL validation</span>
+              </div>
+              <div class="stat-box">
+                <strong>CI/CD</strong>
+                <span>Experience with Jenkins, Git, and delivery support</span>
+              </div>
+              <div class="stat-box">
+                <strong>Data</strong>
+                <span>SQL tuning, stored procedures, execution plans</span>
+              </div>
+            </div>
 
-  <footer>
-    <p>© 2026 Uday Prasad Swarna. All rights reserved.</p>
-  </footer>
+            <div class="floating-note">
+              <strong>Open to impactful engineering teams</strong>
+              <span>Interested in QA Automation, SDET, QA Lead, and SQL-focused roles.</span>
+            </div>
+          </div>
+        </section>
 
+        <section class="card section" id="features">
+          <div class="section-header">
+            <div>
+              <div class="tag">What I do</div>
+              <h2>Core capabilities</h2>
+            </div>
+            <p>I work across functional testing, automation engineering, data validation, and release reliability to help teams ship with confidence.</p>
+          </div>
+
+          <div class="grid features-grid">
+            <article class="feature-card">
+              <div class="feature-icon">01</div>
+              <h3>UI Test Automation</h3>
+              <p>Designing maintainable automation coverage for web applications using Selenium, Playwright, and Cypress with reusable test structure.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">02</div>
+              <h3>API Validation</h3>
+              <p>Building API test scenarios for data integrity, request-response validation, edge cases, and service reliability across integrations.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">03</div>
+              <h3>SQL & Data Quality</h3>
+              <p>Writing SQL queries, analyzing execution plans, validating backend data, and supporting database performance improvements.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">04</div>
+              <h3>CI/CD & Reliability</h3>
+              <p>Supporting Jenkins-based delivery workflows, troubleshooting environments, reviewing logs, and helping teams reduce release risk.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card section" id="projects">
+          <div class="section-header">
+            <div>
+              <div class="tag">Selected work</div>
+              <h2>Projects & highlights</h2>
+            </div>
+            <p>These showcase the kind of quality engineering, automation, and database work I bring to product and platform teams.</p>
+          </div>
+
+          <div class="grid projects-grid">
+            <article class="project-card">
+              <div class="project-top">
+                <span class="project-label">Automation Framework</span>
+                <span>↗</span>
+              </div>
+              <h3>Reusable UI test automation framework</h3>
+              <p>Built a modular automation setup for regression and smoke coverage with reusable page objects, cleaner maintenance, and scalable execution design.</p>
+              <div class="stack">
+                <span>Selenium</span>
+                <span>Playwright</span>
+                <span>Java</span>
+                <span>TestNG</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <span class="project-label">Database Optimization</span>
+                <span>↗</span>
+              </div>
+              <h3>SQL performance tuning and validation</h3>
+              <p>Improved query efficiency through indexing strategies, execution plan analysis, and stored procedure review while supporting reliable business reporting.</p>
+              <div class="stack">
+                <span>SQL Server</span>
+                <span>T-SQL</span>
+                <span>Indexing</span>
+                <span>Execution Plans</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <span class="project-label">API Testing</span>
+                <span>↗</span>
+              </div>
+              <h3>Service validation suite for backend workflows</h3>
+              <p>Created coverage for request validation, response assertions, negative scenarios, and data verification across interconnected services and business flows.</p>
+              <div class="stack">
+                <span>Postman</span>
+                <span>Rest Assured</span>
+                <span>JSON</span>
+                <span>Validation</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <span class="project-label">Delivery Support</span>
+                <span>↗</span>
+              </div>
+              <h3>CI/CD and environment quality support</h3>
+              <p>Contributed to deployment pipelines, troubleshooting, log analysis, and environment readiness to keep release cycles stable and efficient.</p>
+              <div class="stack">
+                <span>Jenkins</span>
+                <span>Git</span>
+                <span>Linux</span>
+                <span>Splunk</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="split" id="resume">
+          <div class="card section">
+            <div class="section-header">
+              <div>
+                <div class="tag">Experience</div>
+                <h2>Professional journey</h2>
+              </div>
+            </div>
+
+            <div class="grid timeline-grid" style="grid-template-columns: 1fr;">
+              <article class="timeline-card">
+                <div class="timeline-meta">2024 – Present</div>
+                <h3>SQL Database Administrator and QA | JAMIX INC</h3>
+                <p>Supporting SQL Server environments, database validation, performance analysis, and application quality while improving backend reliability.</p>
+                <ul>
+                  <li>Managed SQL Server databases and supported reliable data operations.</li>
+                  <li>Analyzed execution plans and optimized queries for better performance.</li>
+                  <li>Validated application data through SQL and stored procedures.</li>
+                  <li>Supported backup, restore, and maintenance practices.</li>
+                </ul>
+              </article>
+
+              <article class="timeline-card">
+                <div class="timeline-meta">2022 – 2024</div>
+                <h3>System Engineer and QA | JAMIX INC</h3>
+                <p>Worked across environments, CI/CD, troubleshooting, test support, and system validation with a strong reliability mindset.</p>
+                <ul>
+                  <li>Implemented CI/CD support using Jenkins and Git.</li>
+                  <li>Analyzed logs and system behavior to resolve issues faster.</li>
+                  <li>Supported QA processes and environment readiness.</li>
+                  <li>Contributed to stable releases and operational continuity.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <div class="card section" id="skills">
+            <div class="section-header">
+              <div>
+                <div class="tag">Skills</div>
+                <h2>Technical stack</h2>
+              </div>
+            </div>
+
+            <div class="grid skills-grid">
+              <article class="skill-card">
+                <h3>Automation Testing</h3>
+                <p>Hands-on experience in web and API automation across modern QA workflows.</p>
+                <ul>
+                  <li>Selenium WebDriver</li>
+                  <li>Playwright</li>
+                  <li>Cypress</li>
+                  <li>TestNG</li>
+                </ul>
+              </article>
+
+              <article class="skill-card">
+                <h3>Database & SQL</h3>
+                <p>Strong foundation in SQL Server operations, optimization, and backend validation.</p>
+                <ul>
+                  <li>SQL Server</li>
+                  <li>T-SQL</li>
+                  <li>Stored Procedures</li>
+                  <li>Execution Plan Analysis</li>
+                </ul>
+              </article>
+
+              <article class="skill-card">
+                <h3>API & Validation</h3>
+                <p>Experience validating services and ensuring backend data consistency.</p>
+                <ul>
+                  <li>Postman</li>
+                  <li>Rest Assured</li>
+                  <li>JSON / API Assertions</li>
+                  <li>Data Validation</li>
+                </ul>
+              </article>
+
+              <article class="skill-card">
+                <h3>DevOps & Support</h3>
+                <p>Comfortable with delivery support, systems, debugging, and release tooling.</p>
+                <ul>
+                  <li>Jenkins</li>
+                  <li>Git</li>
+                  <li>Linux</li>
+                  <li>Splunk</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="card section" id="contact">
+          <div class="section-header">
+            <div>
+              <div class="tag">Contact</div>
+              <h2>Let’s connect</h2>
+            </div>
+            <p>I’m open to QA Automation, SDET, QA Lead, and SQL / database-focused opportunities.</p>
+          </div>
+
+          <div class="contact-layout">
+            <article class="contact-card">
+              <h3>Contact details</h3>
+              <p>Feel free to reach out for roles, collaborations, or networking conversations.</p>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <span>Email</span>
+                  <a href="mailto:udayprasadswarna21@gmail.com">udayprasadswarna21@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                  <span>Phone</span>
+                  <a href="tel:+18608178602">860-817-8602</a>
+                </div>
+                <div class="contact-item">
+                  <span>LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/uday-prasad-swarna-4736881b9" target="_blank" rel="noopener noreferrer">linkedin.com/in/uday-prasad-swarna-4736881b9</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="contact-card">
+              <h3>Quick profile summary</h3>
+              <p>
+                I enjoy solving product quality and data reliability problems through automation, strong validation, and thoughtful engineering support. I’m especially interested in teams that value clean releases, strong backend confidence, and scalable testing.
+              </p>
+              <div class="hero-actions" style="margin-top: 18px;">
+                <a class="btn btn-primary" href="mailto:udayprasadswarna21@gmail.com">Email Me</a>
+                <a class="btn btn-secondary" href="https://www.linkedin.com/in/uday-prasad-swarna-4736881b9" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer>
+          © 2026 Uday Prasad Swarna. Designed and customized for a modern portfolio experience.
+        </footer>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
+
